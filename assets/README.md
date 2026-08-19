@@ -7,4 +7,4 @@ Add these files here without changing the HTML:
 - `Graphik-Regular.woff2` and `Graphik-Bold.woff2` — licensed Graphik webfont files, if you have them.
 - `cv.pdf` — an optional downloadable CV.
 
-`slime_image.jpeg` was recovered from the supplied `websiteDesign.svg` and is already included.
+`slime_image.png` is the transparent centered artwork and is already included.

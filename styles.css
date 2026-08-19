@@ -23,9 +23,7 @@
   --panel: rgba(255, 255, 255, 0.96);
   --rule: rgba(0, 0, 50, 0.34);
   --icon-blue: #168dff;
-  --left-glow: rgba(255, 236, 132, 0.34);
-  --middle-glow: rgba(255, 76, 71, 0.30);
-  --right-glow: rgba(82, 153, 255, 0.34);
+  --question-glow: rgba(241, 249, 75, 0.95);
   --center-y: 57%;
 }
 
@@ -205,7 +203,6 @@ a {
   letter-spacing: -0.045em;
   text-align: center;
   text-wrap: balance;
-  text-shadow: 0 0 2.8rem rgba(82, 153, 255, 0.16);
   pointer-events: none;
   transition: opacity 240ms ease;
 }
@@ -231,7 +228,6 @@ a {
   height: clamp(11rem, 18vh, 18rem);
   border: 1px solid var(--rule);
   background: var(--panel);
-  box-shadow: 0 1.4rem 4rem rgba(0, 0, 50, 0.12);
   backdrop-filter: blur(1rem);
 }
 
@@ -306,18 +302,21 @@ a {
   top: var(--center-y);
   left: 50%;
   z-index: 10;
-  width: clamp(22rem, 22vw, 42rem);
+  width: clamp(24rem, 25vw, 48rem);
   margin: 0;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .centerpiece img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid rgba(0, 0, 50, 0.34);
-  box-shadow: 0 2rem 6rem rgba(0, 0, 50, 0.22);
+  max-height: 44vh;
+  object-fit: contain;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
 }
 
 .centerpiece figcaption {
@@ -339,15 +338,12 @@ a {
 
 .bezier-line {
   fill: none;
-  stroke-width: 0.12;
+  stroke: #000;
+  stroke-width: 1.2;
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
-  opacity: 0.64;
+  opacity: 1;
 }
-
-.bezier-line--left { stroke: rgba(255, 238, 144, 0.64); }
-.bezier-line--middle { stroke: rgba(255, 111, 103, 0.58); }
-.bezier-line--right { stroke: rgba(103, 167, 255, 0.66); }
 
 .question-map {
   position: absolute;
@@ -373,26 +369,9 @@ a {
   text-wrap: balance;
 }
 
-/* Soft, low-opacity regional glows requested in the layout brief. */
-.question--left {
-  text-shadow:
-    0 0 0.8rem var(--left-glow),
-    0 0 2.6rem var(--left-glow),
-    0 0 5.6rem rgba(255, 236, 132, 0.12);
-}
-
-.question--middle {
-  text-shadow:
-    0 0 0.8rem var(--middle-glow),
-    0 0 2.8rem var(--middle-glow),
-    0 0 5.8rem rgba(255, 76, 71, 0.10);
-}
-
-.question--right {
-  text-shadow:
-    0 0 0.8rem var(--right-glow),
-    0 0 2.8rem var(--right-glow),
-    0 0 5.8rem rgba(82, 153, 255, 0.12);
+/* Matches the SVG's 10px × 7px offset, 14px blur, and #f1f94b glow. */
+.question p {
+  text-shadow: 10px 7px 14px var(--question-glow);
 }
 
 .question-link-icon {
@@ -425,18 +404,24 @@ a {
 .question-link-icon:focus-visible {
   color: #005fbd;
   background: transparent;
-  text-shadow: 0 0 1.4rem rgba(0, 134, 255, 0.5);
+  text-shadow: none;
   outline: none;
   transform: translateY(-0.25rem) scale(1.04);
 }
 
-.question--landauer { top: 72%; left: 14%; }
-.question--simulation { top: 88%; left: 37%; width: 14rem; }
-.question--noise { top: 76%; left: 46%; width: 12rem; }
-.question--range { top: 26%; left: 76%; }
-.question--hopfield { top: 45%; left: 75%; }
-.question--subcellular { top: 63%; right: 2.5%; width: 14rem; }
-.question--memory { top: 71%; left: 69%; }
+.question--intelligences { top: 35%; left: 2.5%; width: clamp(14rem, 11vw, 21rem); }
+.question--life-computational { top: 44%; left: 21%; width: clamp(16rem, 14vw, 26rem); }
+.question--methods { top: 60%; left: 8.25%; width: clamp(17rem, 17vw, 31rem); }
+.question--natural-engineered { top: 81%; left: 4.8%; width: clamp(16rem, 14vw, 26rem); }
+.question--landauer { top: 82%; left: 22.8%; width: clamp(15rem, 14vw, 26rem); }
+.question--simulation { top: 91%; left: 36%; width: clamp(13rem, 12vw, 21rem); }
+.question--information-material { top: 85%; left: 44.7%; width: clamp(15rem, 14vw, 26rem); }
+.question--noise { top: 92%; left: 51%; width: 12rem; }
+.question--range { top: 23%; left: 76%; }
+.question--hopfield { top: 47%; left: 76%; }
+.question--subcellular { top: 64%; right: 1.5%; width: clamp(15rem, 14vw, 26rem); }
+.question--memory { top: 73%; left: 75%; width: clamp(16rem, 14vw, 27rem); }
+.question--tradeoffs { top: 85%; left: 64%; width: clamp(19rem, 19vw, 35rem); }
 
 /* Shared subpage styles. */
 .subpage {

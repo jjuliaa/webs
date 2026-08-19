@@ -11,7 +11,7 @@ slime-cognition-site/
 ├── scripts/
 │   └── three-header.js
 ├── assets/
-│   ├── slime_image.jpeg
+│   ├── slime_image.png
 │   └── README.md
 └── pages/
     ├── about.html
@@ -22,6 +22,13 @@ slime-cognition-site/
     ├── simulation.html
     ├── noise.html
     ├── philosophy.html
+    ├── possible-intelligences.html
+    ├── life-computational.html
+    ├── computational-methods.html
+    ├── natural-vs-engineered.html
+    ├── information-material.html
+    ├── cognitive-tradeoffs.html
+    ├── science-technology-studies.html
     ├── sensory-range.html
     ├── hopfield-dynamics.html
     ├── subcellular-hopfield.html
