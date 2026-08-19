@@ -15,11 +15,13 @@ slime-cognition-site/
 │   └── README.md
 └── pages/
     ├── about.html
+    ├── biology.html
     ├── contact.html
     ├── resume.html
     ├── landauer.html
     ├── simulation.html
     ├── noise.html
+    ├── philosophy.html
     ├── sensory-range.html
     ├── hopfield-dynamics.html
     ├── subcellular-hopfield.html
