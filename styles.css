@@ -24,6 +24,7 @@
   --rule: rgba(0, 0, 50, 0.34);
   --icon-blue: #168dff;
   --question-glow: rgba(241, 249, 75, 0.95);
+  --question-glow-hover: hsla(63, 100%, 64%, 0.95);
   --center-y: 57%;
 }
 
@@ -335,15 +336,15 @@ a {
   text-wrap: balance;
 }
 
-/* Matches the SVG's 10px × 7px offset, 14px blur, and #f1f94b glow. */
+/* Always-on SVG glow; hover raises its yellow saturation by 10% (capped at 100%). */
 .question p {
-  text-shadow: none;
+  text-shadow: 10px 7px 14px var(--question-glow);
   transition: text-shadow 180ms ease;
 }
 
 .question:hover p,
 .question:focus-within p {
-  text-shadow: 10px 7px 14px var(--question-glow);
+  text-shadow: 10px 7px 14px var(--question-glow-hover);
 }
 
 .question-link-icon {
