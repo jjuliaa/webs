@@ -12,6 +12,9 @@ slime-cognition-site/
 │   └── three-header.js
 ├── assets/
 │   ├── slime_image.png
+│   ├── 3fields.png
+│   ├── headshot.png
+│   ├── JLC-CV-Resume-2025.pdf
 │   └── README.md
 └── pages/
     ├── about.html
@@ -44,6 +47,6 @@ Upload the contents of this folder to the root of a GitHub repository, then enab
 1. Add the optional files listed in `assets/README.md`.
 2. Edit the question text and `href` values in `index.html`.
 3. Tune the normalized positions under the `.question--…` rules in `styles.css`.
-4. Replace the starter copy in each file under `pages/`.
+4. Replace the forthcoming message in each research page when its content is ready.
 
 The desktop composition uses the supplied SVG’s 1920 × 1080 artboard as its reference scale. Below 680px, the network becomes a stacked mobile layout and the decorative curves are removed for legibility.
