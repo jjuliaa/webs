@@ -8,12 +8,14 @@ This is a no-build static website suitable for GitHub Pages.
 slime-cognition-site/
 ├── index.html
 ├── styles.css
+├── CNAME
 ├── scripts/
 │   └── three-header.js
 ├── assets/
 │   ├── slime_image.png
 │   ├── 3fields.png
 │   ├── headshot.png
+│   ├── header-title.jpg
 │   ├── JLC-CV-Resume-2025.pdf
 │   └── README.md
 └── pages/

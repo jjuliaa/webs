@@ -149,40 +149,12 @@ a {
   transform: translateX(-50%);
 }
 
-#bubble-header-canvas {
-  position: absolute;
-  inset: 0;
+.bubble-header__image {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
-}
-
-.bubble-header__fallback {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  align-content: center;
-  margin: 0;
-  color: rgba(16, 17, 42, 0.96);
-  font-size: clamp(2.3rem, 3.4vw, 5.7rem);
-  font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.045em;
-  text-align: center;
-  text-wrap: balance;
-  pointer-events: none;
-  transition: opacity 240ms ease;
-}
-
-.bubble-header__fallback span {
-  display: block;
-  font-size: 0.62em;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-.bubble-header.has-texture .bubble-header__fallback {
-  opacity: 0;
+  border: 0;
+  object-fit: contain;
 }
 
 .document-shell {
