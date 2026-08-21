@@ -139,32 +139,43 @@ a {
   background: #fff;
 }
 
-.bubble-header {
+.intro-stack {
   position: absolute;
   top: 1.2rem;
-  left: 50%;
+  left: 0;
   z-index: 12;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 1.2rem;
+}
+
+.bubble-header {
+  position: relative;
+  display: grid;
+  place-items: center;
   width: min(58vw, 86rem);
   height: clamp(8rem, 12vw, 15rem);
-  transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .bubble-header__image {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 86rem;
+  max-height: 15rem;
   border: 0;
   object-fit: contain;
 }
 
 .document-shell {
-  position: absolute;
-  top: clamp(11rem, 16vh, 17rem);
-  left: 25%;
+  position: relative;
   z-index: 11;
   width: 50%;
   min-width: 34rem;
   height: clamp(11rem, 18vh, 18rem);
+  justify-self: center;
   border: 1px solid var(--rule);
   background: var(--panel);
   backdrop-filter: blur(1rem);
@@ -535,14 +546,16 @@ a {
     right: 1.6rem;
   }
 
-  .bubble-header {
+  .intro-stack {
     top: 8rem;
+    width: 100%;
+  }
+
+  .bubble-header {
     width: 82vw;
   }
 
   .document-shell {
-    top: 19rem;
-    left: 15%;
     width: 70%;
     min-width: 0;
   }
@@ -577,8 +590,7 @@ a {
     position: absolute;
   }
 
-  .bubble-header,
-  .document-shell,
+  .intro-stack,
   .centerpiece,
   .question-map {
     position: relative;
@@ -590,24 +602,39 @@ a {
     transform: none;
   }
 
-  .bubble-header {
+  .intro-stack {
     order: 1;
-    height: 12rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .bubble-header,
+  .document-shell {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
   }
 
   .document-shell {
-    order: 2;
     height: 18rem;
-    margin-top: 1.5rem;
+    margin-top: 0;
+  }
+
+  .bubble-header {
+    height: 12rem;
   }
 
   .centerpiece {
-    order: 3;
+    order: 2;
     margin-top: 3rem;
   }
 
   .question-map {
-    order: 4;
+    order: 3;
     display: grid;
     gap: 1px;
     margin-top: 3rem;

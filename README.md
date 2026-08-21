@@ -15,7 +15,7 @@ slime-cognition-site/
 │   ├── slime_image.png
 │   ├── 3fields.png
 │   ├── headshot.png
-│   ├── header-title.jpg
+│   ├── header-title.png
 │   ├── JLC-CV-Resume-2025.pdf
 │   └── README.md
 └── pages/
