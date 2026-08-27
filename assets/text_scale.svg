@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 963.1 881.58">
+  <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 48.19px;
+      }
+
+      .st1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <circle class="st1" cx="308.92" cy="299.04" r="256.03"/>
+  <circle class="st1" cx="655.11" cy="299.33" r="256.03"/>
+  <circle class="st1" cx="481.99" cy="590.65" r="256.03"/>
+  <text class="st0" transform="translate(628.96 246.84)"><tspan x="0" y="0">evolutionary</tspan><tspan x="0" y="57.83">biology</tspan></text>
+  <text class="st0" transform="translate(81 269.2)"><tspan x="0" y="0">philosophy of </tspan><tspan x="0" y="57.83">biology</tspan></text>
+  <text class="st0" transform="translate(338.63 654.84)"><tspan x="0" y="0">computational</tspan><tspan x="0" y="57.83">neuroscience</tspan></text>
+</svg>

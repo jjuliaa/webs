@@ -34,6 +34,7 @@
 
 html {
   background: #fff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -109,6 +110,18 @@ a {
   text-decoration-color: currentColor;
 }
 
+.site-links__about,
+.site-links__subnav {
+  display: grid;
+}
+
+.site-links__subnav {
+  gap: 0.05rem;
+  margin: 0.15rem 0 0.25rem 0.9rem;
+  font-size: 0.86em;
+  line-height: 1.35;
+}
+
 .corner-icon {
   position: absolute;
   top: 2rem;
@@ -156,6 +169,7 @@ a {
   place-items: center;
   width: min(58vw, 86rem);
   height: clamp(8rem, 12vw, 15rem);
+  margin-inline: auto;
   overflow: hidden;
 }
 
@@ -169,12 +183,29 @@ a {
   object-fit: contain;
 }
 
+.research-questions-page .intro-stack {
+  z-index: 30;
+}
+
+/* The research title is exactly 3% larger than the base title footprint. */
+.research-questions-page .bubble-header {
+  width: min(59.74vw, 88.58rem);
+  height: clamp(8.24rem, 12.36vw, 15.45rem);
+  overflow: visible;
+}
+
+.research-questions-page .bubble-header__image {
+  position: relative;
+  z-index: 31;
+}
+
 .document-shell {
   position: relative;
   z-index: 11;
   width: 50%;
   min-width: 34rem;
   height: clamp(11rem, 18vh, 18rem);
+  margin-inline: auto;
   justify-self: center;
   border: 1px solid var(--rule);
   background: var(--panel);
@@ -289,9 +320,11 @@ a {
 .bezier-line {
   fill: none;
   stroke: #000;
-  stroke-width: 1.2;
+  stroke-width: 1.1;
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
+  stroke-linejoin: round;
+  shape-rendering: geometricPrecision;
   opacity: 1;
 }
 
@@ -304,17 +337,16 @@ a {
 
 .question {
   position: absolute;
-  display: flex;
-  align-items: flex-end;
-  gap: 0.8rem;
+  display: block;
   width: clamp(15rem, 16vw, 25rem);
   color: var(--ink);
   font-size: clamp(1.2rem, 1.05vw, 1.75rem);
-  line-height: 1.24;
+  line-height: 1.32;
   pointer-events: auto;
 }
 
 .question p {
+  display: inline;
   margin: 0;
   text-wrap: balance;
 }
@@ -331,8 +363,7 @@ a {
 }
 
 .question-link-icon {
-  flex: 0 0 auto;
-  display: inline;
+  display: inline-block;
   min-width: 0;
   height: auto;
   padding: 0;
@@ -344,10 +375,13 @@ a {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
+  margin: 0 0 0 0.45rem;
   text-decoration: underline;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.2em;
   text-shadow: none;
+  vertical-align: baseline;
+  transform: translateY(0.22rem);
   transition: color 160ms ease, text-shadow 160ms ease, transform 160ms ease;
 }
 
@@ -362,22 +396,121 @@ a {
   background: transparent;
   text-shadow: none;
   outline: none;
-  transform: translateY(-0.25rem) scale(1.04);
+  transform: translateY(0.08rem) scale(1.04);
 }
 
-.question--intelligences { top: 35%; left: 2.5%; width: clamp(14rem, 11vw, 21rem); }
-.question--life-computational { top: 44%; left: 21%; width: clamp(16rem, 14vw, 26rem); }
-.question--methods { top: 60%; left: 8.25%; width: clamp(17rem, 17vw, 31rem); }
-.question--natural-engineered { top: 81%; left: 4.8%; width: clamp(16rem, 14vw, 26rem); }
-.question--landauer { top: 82%; left: 22.8%; width: clamp(15rem, 14vw, 26rem); }
-.question--simulation { top: 91%; left: 36%; width: clamp(13rem, 12vw, 21rem); }
-.question--information-material { top: 85%; left: 44.7%; width: clamp(15rem, 14vw, 26rem); }
-.question--noise { top: 92%; left: 51%; width: 12rem; }
-.question--range { top: 23%; left: 76%; }
-.question--hopfield { top: 47%; left: 76%; }
-.question--subcellular { top: 64%; right: 1.5%; width: clamp(15rem, 14vw, 26rem); }
-.question--memory { top: 73%; left: 75%; width: clamp(16rem, 14vw, 27rem); }
-.question--tradeoffs { top: 85%; left: 64%; width: clamp(19rem, 19vw, 35rem); }
+.question--intelligences { top: 34%; left: 2.5%; width: clamp(14rem, 11vw, 21rem); }
+.question--information-understanding { top: 24%; left: 23%; width: clamp(16rem, 13vw, 22rem); }
+.question--llms-brains { top: 24%; left: 57%; width: clamp(18rem, 16vw, 28rem); }
+.question--life-computational { top: 40%; left: 20%; width: clamp(16rem, 13vw, 22rem); }
+.question--multiselectivity { top: 51%; left: 1.5%; width: clamp(18rem, 14vw, 25rem); }
+.question--methods { top: 62%; left: 7%; width: clamp(17rem, 15vw, 28rem); }
+.question--natural-engineered { top: 77%; left: 4%; width: clamp(16rem, 13vw, 25rem); }
+.question--landauer { top: 82%; left: 23%; width: clamp(15rem, 12vw, 22rem); }
+.question--simulation { top: 92%; left: 33%; width: clamp(13rem, 10vw, 16rem); }
+.question--information-material { top: 83%; left: 44%; width: clamp(15rem, 11vw, 18rem); }
+.question--noise { top: 92%; left: 56.5%; width: 9rem; }
+.question--range { top: 26%; left: 81%; width: clamp(16rem, 12vw, 18rem); }
+.question--memory { top: 37%; left: 61%; width: clamp(17rem, 14vw, 25rem); }
+.question--hopfield { top: 50%; left: 79%; width: clamp(16rem, 14vw, 24rem); }
+.question--subcellular { top: 65%; right: 1.5%; width: clamp(15rem, 13vw, 23rem); }
+.question--tradeoffs { top: 80%; left: 68%; width: clamp(19rem, 16vw, 28rem); }
+
+/* Home page: Word-document hierarchy in a responsive, readable column. */
+.home-page {
+  min-height: 100svh;
+  padding-bottom: 8rem;
+  background: #fff;
+}
+
+.home-title-banner {
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 10;
+  width: min(44vw, 66rem);
+  height: clamp(6rem, 8.7vw, 11.4rem);
+  margin: 1.2rem auto 1in;
+  overflow: visible;
+}
+
+.home-title-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.home-slime-icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 20;
+  display: block;
+  width: auto;
+  height: clamp(17.7rem, 20.2vw, 27.8rem);
+  max-width: clamp(11.4rem, 15.2vw, 19rem);
+  border: 0;
+  object-fit: contain;
+}
+
+.home-content {
+  width: min(calc(100% - 4rem), 100rem);
+  margin: 0 auto;
+  color: var(--ink);
+  font-size: 1.8rem;
+  line-height: 1.65;
+}
+
+.home-section + .home-section {
+  margin-top: clamp(5rem, 8vw, 9rem);
+}
+
+.home-section {
+  scroll-margin-top: 3rem;
+}
+
+.home-section h1,
+.home-section h2 {
+  margin: 0 0 2rem;
+  font-size: clamp(2.2rem, 2.4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-section p {
+  max-width: 72ch;
+  margin: 0 0 1.8rem;
+}
+
+.home-section a {
+  color: #32778c;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.home-section a:hover,
+.home-section a:focus-visible {
+  color: #005fbd;
+}
+
+.research-statement p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.about-me-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem);
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: start;
+}
+
+.about-me-section .about-headshot {
+  justify-self: end;
+  width: min(100%, 22rem);
+}
 
 /* Shared subpage styles. */
 .subpage {
@@ -560,10 +693,26 @@ a {
     min-width: 0;
   }
 
-  .question--landauer { left: 4%; }
-  .question--range { left: 72%; }
-  .question--hopfield { left: 72%; }
-  .question--memory { left: 72%; }
+  .home-title-banner {
+    width: 64vw;
+    height: 9.4rem;
+    margin-top: 11.5rem;
+  }
+
+  .home-slime-icon {
+    top: 1.4rem;
+    right: 1.6rem;
+    height: 15.2rem;
+  }
+
+  .research-questions-page .bubble-header { width: 84.46vw; }
+  .question--information-understanding { left: 17%; }
+  .question--llms-brains { left: 44%; width: 25rem; }
+  .question--multiselectivity { left: 1%; }
+  .question--landauer { left: 20%; }
+  .question--range { left: 79%; }
+  .question--hopfield { left: 75%; }
+  .question--memory { left: 57%; }
 }
 
 @media (max-width: 680px) {
@@ -628,6 +777,39 @@ a {
     height: 12rem;
   }
 
+  .research-questions-page .bubble-header {
+    width: 100%;
+    height: 12.36rem;
+  }
+
+  .home-page {
+    padding-bottom: 5rem;
+  }
+
+  .home-title-banner {
+    width: calc(100% - 8rem);
+    height: 8.5rem;
+    margin: 17rem auto 1in;
+  }
+
+  .home-slime-icon {
+    height: 15.2rem;
+  }
+
+  .home-content {
+    width: 100%;
+    padding: 0 1.6rem;
+  }
+
+  .about-me-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-section .about-headshot {
+    justify-self: start;
+    width: min(60vw, 20rem);
+  }
+
   .centerpiece {
     order: 2;
     margin-top: 3rem;
@@ -648,7 +830,6 @@ a {
 
   .question {
     position: static;
-    justify-content: space-between;
     width: 100%;
     min-height: 11rem;
     padding: 2rem;

@@ -14,12 +14,14 @@ slime-cognition-site/
 ├── assets/
 │   ├── slime_image.png
 │   ├── 3fields.png
+│   ├── slimesimple-drawing.png
 │   ├── headshot.png
-│   ├── header-title.png
-│   ├── JLC-CV-Resume-2025.pdf
+│   ├── header-title-transparent.png
+│   ├── Jules-Litman-Cleper-Research-Resume-2026.pdf
 │   └── README.md
 └── pages/
     ├── about.html
+    ├── research-questions.html
     ├── biology.html
     ├── contact.html
     ├── resume.html
@@ -32,6 +34,9 @@ slime-cognition-site/
     ├── computational-methods.html
     ├── natural-vs-engineered.html
     ├── information-material.html
+    ├── information-understanding.html
+    ├── llms-brains.html
+    ├── multiselectivity-feature-problem.html
     ├── cognitive-tradeoffs.html
     ├── science-technology-studies.html
     ├── sensory-range.html
@@ -47,8 +52,9 @@ Upload the contents of this folder to the root of a GitHub repository, then enab
 ## Customize
 
 1. Add the optional files listed in `assets/README.md`.
-2. Edit the question text and `href` values in `index.html`.
-3. Tune the normalized positions under the `.question--…` rules in `styles.css`.
-4. Replace the forthcoming message in each research page when its content is ready.
+2. Edit the homepage copy in `index.html`.
+3. Edit the question text and `href` values in `pages/research-questions.html`.
+4. Tune the normalized positions under the `.question--…` rules in `styles.css`.
+5. Replace the forthcoming message in each research page when its content is ready.
 
 The desktop composition uses the supplied SVG’s 1920 × 1080 artboard as its reference scale. Below 680px, the network becomes a stacked mobile layout and the decorative curves are removed for legibility.
