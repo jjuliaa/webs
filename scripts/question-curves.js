@@ -30,10 +30,32 @@
       const link = question.querySelector(".question-link-icon");
       if (!text || !link) return;
 
-      const textRect = text.getBoundingClientRect();
+      const textFragments = [...text.getClientRects()];
       const linkRect = link.getBoundingClientRect();
-      const targetX = linkRect.left - stageRect.left + linkRect.width / 2;
-      const targetY = Math.max(textRect.bottom, linkRect.bottom) - stageRect.top + 5;
+      const contentRects = [...textFragments, linkRect];
+      const contentLeft = Math.min(...contentRects.map((rect) => rect.left)) - stageRect.left;
+      const contentRight = Math.max(...contentRects.map((rect) => rect.right)) - stageRect.left;
+      const contentTop = Math.min(...contentRects.map((rect) => rect.top)) - stageRect.top;
+      const contentBottom = Math.max(...contentRects.map((rect) => rect.bottom)) - stageRect.top;
+      const questionCenterX = (contentLeft + contentRight) / 2;
+      const questionCenterY = (contentTop + contentBottom) / 2;
+      const questionDeltaX = questionCenterX - centerX;
+      const questionDeltaY = questionCenterY - centerY;
+      const questionDistance = Math.max(Math.hypot(questionDeltaX, questionDeltaY), 1);
+      const questionUnitX = questionDeltaX / questionDistance;
+      const questionUnitY = questionDeltaY / questionDistance;
+      const halfQuestionWidth = Math.max((contentRight - contentLeft) / 2, 1);
+      const halfQuestionHeight = Math.max((contentBottom - contentTop) / 2, 1);
+      const horizontalEdgeDistance = Math.abs(questionUnitX) > 0.0001
+        ? halfQuestionWidth / Math.abs(questionUnitX)
+        : Number.POSITIVE_INFINITY;
+      const verticalEdgeDistance = Math.abs(questionUnitY) > 0.0001
+        ? halfQuestionHeight / Math.abs(questionUnitY)
+        : Number.POSITIVE_INFINITY;
+      const contentEdgeDistance = Math.min(horizontalEdgeDistance, verticalEdgeDistance);
+      const questionGap = Math.min(12, Math.max(7, stageWidth * 0.005));
+      const targetX = questionCenterX - questionUnitX * (contentEdgeDistance + questionGap);
+      const targetY = questionCenterY - questionUnitY * (contentEdgeDistance + questionGap);
       const deltaX = targetX - centerX;
       const deltaY = targetY - centerY;
       const centerDistance = Math.max(Math.hypot(deltaX, deltaY), 1);
@@ -75,6 +97,8 @@
         `M ${startX.toFixed(1)} ${startY.toFixed(1)} C ${controlOneX.toFixed(1)} ${controlOneY.toFixed(1)}, ${controlTwoX.toFixed(1)} ${controlTwoY.toFixed(1)}, ${targetX.toFixed(1)} ${targetY.toFixed(1)}`
       );
     });
+
+    svg.classList.add("is-ready");
   };
 
   const scheduleDraw = () => {
