@@ -408,6 +408,7 @@ a {
 .question--intelligences { top: 34%; left: 2.5%; width: clamp(14rem, 11vw, 21rem); }
 .question--information-understanding { top: 24%; left: 23%; width: clamp(16rem, 13vw, 22rem); }
 .question--llms-brains { top: 24%; left: 57%; width: clamp(18rem, 16vw, 28rem); }
+.question--internal-representations { top: 20%; left: 41%; width: clamp(17rem, 14vw, 24rem); }
 .question--life-computational { top: 40%; left: 20%; width: clamp(16rem, 13vw, 22rem); }
 .question--multiselectivity { top: 51%; left: 1.5%; width: clamp(18rem, 14vw, 25rem); }
 .question--methods { top: 62%; left: 7%; width: clamp(17rem, 15vw, 28rem); }
@@ -712,8 +713,9 @@ a {
   }
 
   .research-questions-page .bubble-header { width: 84.46vw; }
-  .question--information-understanding { left: 17%; }
-  .question--llms-brains { left: 44%; width: 25rem; }
+  .question--information-understanding { left: 15%; }
+  .question--internal-representations { top: 24%; left: 39%; width: 18rem; }
+  .question--llms-brains { left: 64%; width: 20rem; }
   .question--multiselectivity { left: 1%; }
   .question--landauer { left: 20%; }
   .question--range { left: 79%; }

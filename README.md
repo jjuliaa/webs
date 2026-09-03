@@ -35,6 +35,7 @@ slime-cognition-site/
     ├── natural-vs-engineered.html
     ├── information-material.html
     ├── information-understanding.html
+    ├── internal-representations.html
     ├── llms-brains.html
     ├── multiselectivity-feature-problem.html
     ├── cognitive-tradeoffs.html
