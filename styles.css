@@ -489,6 +489,17 @@ a {
   object-fit: contain;
 }
 
+.home-slime-link {
+  display: block;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.home-slime-link:focus-visible {
+  outline: 2px solid #006ec9;
+  outline-offset: 0.4rem;
+}
+
 .home-slime-caption {
   width: 100%;
   margin: 0.45rem 0 0;
