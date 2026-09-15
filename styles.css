@@ -83,8 +83,11 @@ a {
   inset: 1.8rem auto auto 2rem;
   z-index: 20;
   display: grid;
+  grid-template-columns: max-content;
+  justify-items: start;
   gap: 0.15rem;
   width: max-content;
+  text-align: left;
   font-size: 1.45rem;
   line-height: 1.45;
 }
@@ -185,6 +188,10 @@ a {
 
 .research-questions-page .intro-stack {
   z-index: 30;
+}
+
+.research-questions-page .site-links {
+  font-size: 1.3rem;
 }
 
 /* The research title is exactly 3% larger than the base title footprint. */
@@ -331,7 +338,7 @@ a {
   stroke-linecap: round;
   stroke-linejoin: round;
   shape-rendering: geometricPrecision;
-  opacity: 1;
+  opacity: 0.55;
 }
 
 .question-map {
@@ -405,10 +412,22 @@ a {
   transform: translateY(0.08rem) scale(1.04);
 }
 
+/* Only the subpage marker stays subdued until its linked page has material. */
+.question--forthcoming .question-link-icon {
+  color: #8c8f96;
+}
+
+.question--forthcoming .question-link-icon:hover,
+.question--forthcoming .question-link-icon:focus-visible {
+  color: #62666f;
+}
+
 .question--intelligences { top: 34%; left: 2.5%; width: clamp(14rem, 11vw, 21rem); }
+.question--feature-selectivity { top: 22%; left: 2.5%; width: clamp(15rem, 15vw, 24rem); }
 .question--information-understanding { top: 24%; left: 23%; width: clamp(16rem, 13vw, 22rem); }
 .question--llms-brains { top: 24%; left: 57%; width: clamp(18rem, 16vw, 28rem); }
 .question--internal-representations { top: 20%; left: 41%; width: clamp(17rem, 14vw, 24rem); }
+.question--representations-cognition { top: 70%; left: 21%; width: clamp(17rem, 16vw, 24rem); }
 .question--life-computational { top: 40%; left: 20%; width: clamp(16rem, 13vw, 22rem); }
 .question--multiselectivity { top: 51%; left: 1.5%; width: clamp(18rem, 14vw, 25rem); }
 .question--methods { top: 62%; left: 7%; width: clamp(17rem, 15vw, 28rem); }
@@ -436,7 +455,8 @@ a {
   position: relative;
   z-index: 10;
   width: min(44vw, 66rem);
-  height: clamp(6rem, 8.7vw, 11.4rem);
+  height: auto;
+  aspect-ratio: 5846 / 2446;
   margin: 1.2rem auto 1in;
   overflow: visible;
 }
@@ -449,23 +469,40 @@ a {
   object-fit: contain;
 }
 
-.home-slime-icon {
+.home-slime-figure {
   position: absolute;
   top: 2rem;
   right: 2rem;
   z-index: 20;
+  display: grid;
+  justify-items: center;
+  width: clamp(11.4rem, 15.2vw, 19rem);
+  margin: 0;
+}
+
+.home-slime-icon {
   display: block;
   width: auto;
   height: clamp(17.7rem, 20.2vw, 27.8rem);
-  max-width: clamp(11.4rem, 15.2vw, 19rem);
+  max-width: 100%;
   border: 0;
   object-fit: contain;
+}
+
+.home-slime-caption {
+  width: 100%;
+  margin: 0.45rem 0 0;
+  color: rgba(16, 17, 42, 0.5);
+  font-size: clamp(0.85rem, 0.65vw, 1.05rem);
+  line-height: 1.3;
+  text-align: left;
 }
 
 .home-content {
   width: min(calc(100% - 4rem), 100rem);
   margin: 0 auto;
   color: var(--ink);
+  text-align: left;
   font-size: 1.8rem;
   line-height: 1.65;
 }
@@ -503,8 +540,7 @@ a {
 }
 
 .research-statement p {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .about-me-section {
@@ -573,6 +609,7 @@ a {
 
 .resume-page {
   width: min(100%, 110rem);
+  margin-top: clamp(5rem, 6vw, 7rem);
 }
 
 .resume-page > p {
@@ -671,14 +708,14 @@ a {
   :root { --center-y: 54%; }
 
   .site-links {
-    grid-template-columns: repeat(4, auto);
-    gap: 0.6rem 1.4rem;
+    grid-template-columns: max-content;
+    gap: 0.15rem;
     inset: 1.4rem auto auto 1.6rem;
   }
 
   .site-links__label {
-    grid-column: 1 / -1;
-    margin: 0;
+    grid-column: auto;
+    margin: 0 0 0.35rem;
   }
 
   .corner-icon {
@@ -702,22 +739,27 @@ a {
 
   .home-title-banner {
     width: 64vw;
-    height: 9.4rem;
+    height: auto;
     margin-top: 11.5rem;
   }
 
-  .home-slime-icon {
+  .home-slime-figure {
     top: 1.4rem;
     right: 1.6rem;
+  }
+
+  .home-slime-icon {
     height: 15.2rem;
   }
 
   .research-questions-page .bubble-header { width: 84.46vw; }
+  .question--feature-selectivity { top: 26%; left: 1.5%; width: 16rem; }
   .question--information-understanding { left: 15%; }
   .question--internal-representations { top: 24%; left: 39%; width: 18rem; }
   .question--llms-brains { left: 64%; width: 20rem; }
+  .question--representations-cognition { top: 73%; left: 18%; width: 17rem; }
   .question--multiselectivity { left: 1%; }
-  .question--landauer { left: 20%; }
+  .question--landauer { top: 85%; left: 20%; }
   .question--range { left: 79%; }
   .question--hopfield { left: 75%; }
   .question--memory { left: 57%; }
@@ -739,7 +781,8 @@ a {
 
   .site-links {
     position: absolute;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: max-content;
+    gap: 0.15rem;
     font-size: 1.3rem;
   }
 
@@ -796,8 +839,8 @@ a {
 
   .home-title-banner {
     width: calc(100% - 8rem);
-    height: 8.5rem;
-    margin: 17rem auto 1in;
+    height: auto;
+    margin: 20.5rem auto 1in;
   }
 
   .home-slime-icon {

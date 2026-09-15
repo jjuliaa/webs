@@ -17,6 +17,7 @@ slime-cognition-site/
 │   ├── slimesimple-drawing.png
 │   ├── headshot.png
 │   ├── header-title-transparent.png
+│   ├── name-title.png
 │   ├── Jules-Litman-Cleper-Research-Resume-2026.pdf
 │   └── README.md
 └── pages/
@@ -35,7 +36,9 @@ slime-cognition-site/
     ├── natural-vs-engineered.html
     ├── information-material.html
     ├── information-understanding.html
+    ├── emergence-feature-selectivity.html
     ├── internal-representations.html
+    ├── internal-representations-cognition.html
     ├── llms-brains.html
     ├── multiselectivity-feature-problem.html
     ├── cognitive-tradeoffs.html
@@ -57,5 +60,6 @@ Upload the contents of this folder to the root of a GitHub repository, then enab
 3. Edit the question text and `href` values in `pages/research-questions.html`.
 4. Tune the normalized positions under the `.question--…` rules in `styles.css`.
 5. Replace the forthcoming message in each research page when its content is ready.
+6. Remove `question--forthcoming` from that question’s `<article>` in `pages/research-questions.html` to restore its full-color styling.
 
 The desktop composition uses the supplied SVG’s 1920 × 1080 artboard as its reference scale. Below 680px, the network becomes a stacked mobile layout and the decorative curves are removed for legibility.
