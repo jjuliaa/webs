@@ -296,6 +296,17 @@ a {
   pointer-events: none;
 }
 
+.centerpiece-link {
+  display: block;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.centerpiece-link:focus-visible {
+  outline: 2px solid #006ec9;
+  outline-offset: 0.4rem;
+}
+
 .centerpiece img {
   display: block;
   width: 100%;
