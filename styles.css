@@ -589,6 +589,46 @@ a {
   position: fixed;
 }
 
+.subpage-slime-figure {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 20;
+  display: grid;
+  justify-items: center;
+  width: clamp(9rem, 11vw, 14rem);
+  margin: 0;
+}
+
+.subpage-slime-link {
+  display: block;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.subpage-slime-link:focus-visible {
+  outline: 2px solid #006ec9;
+  outline-offset: 0.4rem;
+}
+
+.subpage-slime-icon {
+  display: block;
+  width: auto;
+  height: clamp(14rem, 16vw, 20.5rem);
+  max-width: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.subpage-slime-caption {
+  width: 100%;
+  margin: 0.4rem 0 0;
+  color: rgba(16, 17, 42, 0.5);
+  font-size: clamp(0.8rem, 0.6vw, 1rem);
+  line-height: 1.3;
+  text-align: left;
+}
+
 .plain-page {
   width: min(100%, 100rem);
   margin: 0 auto;
@@ -629,9 +669,15 @@ a {
   box-shadow: none;
 }
 
+.resume-subpage {
+  padding-top: 1in;
+  padding-right: max(18rem, calc((100vw - 132rem) / 2));
+  padding-left: max(18rem, calc((100vw - 132rem) / 2));
+}
+
 .resume-page {
   width: min(100%, 110rem);
-  margin-top: clamp(5rem, 6vw, 7rem);
+  margin: 0 auto;
 }
 
 .resume-page > p {
@@ -867,6 +913,20 @@ a {
 
   .home-slime-icon {
     height: 15.2rem;
+  }
+
+  .subpage-slime-figure {
+    top: 1.4rem;
+    right: 1.6rem;
+    width: 9.5rem;
+  }
+
+  .subpage-slime-icon {
+    height: 14rem;
+  }
+
+  .resume-subpage {
+    padding: 18rem 1.6rem 5rem;
   }
 
   .home-content {
