@@ -35,6 +35,7 @@ slime-cognition-site/
     ├── computational-methods.html
     ├── natural-vs-engineered.html
     ├── information-material.html
+    ├── substrate-information.html
     ├── information-understanding.html
     ├── emergence-feature-selectivity.html
     ├── internal-representations.html
