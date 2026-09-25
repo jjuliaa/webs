@@ -452,13 +452,6 @@ a {
 .question--hopfield { top: 50%; left: 79%; width: clamp(16rem, 14vw, 24rem); }
 .question--subcellular { top: 65%; right: 1.5%; width: clamp(15rem, 13vw, 23rem); }
 .question--tradeoffs { top: 80%; left: 68%; width: clamp(19rem, 16vw, 28rem); }
-.question--substrate-information {
-  top: auto;
-  right: 2%;
-  bottom: 2.5%;
-  left: auto;
-  width: clamp(21rem, 17vw, 29rem);
-}
 
 /* Home page: Word-document hierarchy in a responsive, readable column. */
 .home-page {
@@ -838,13 +831,6 @@ a {
   .question--range { left: 79%; }
   .question--hopfield { left: 75%; }
   .question--memory { left: 57%; }
-  .question--substrate-information {
-    top: auto;
-    right: 2%;
-    bottom: 2.5%;
-    left: auto;
-    width: 20rem;
-  }
 }
 
 @media (max-width: 680px) {
